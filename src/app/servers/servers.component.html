@@ -3,7 +3,7 @@
 </label>
 
 <input type="text" name="serverName" id="serverName" class="form-control"
-  (input)="onUpdateServerName($event)">
+  [(ngModel)]="serverName">
 
 <p>
   {{serverName}}

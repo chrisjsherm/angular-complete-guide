@@ -1,0 +1,15 @@
+<label for="username">
+  Username
+</label>
+<input type="text" name="username" id="username" class="form-control"
+  [(ngModel)]="username">
+
+<p>
+  {{username}}
+</p>
+
+<button class="btn btn-primary"
+  [disabled]="isAddUserDisabled()"
+  (click)="onAddUser()">
+  Add user
+</button>

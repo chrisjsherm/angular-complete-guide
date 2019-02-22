@@ -1,0 +1,4 @@
+.click-counter:nth-child(n + 5) {
+  background-color: blue;
+  color: white;
+}

@@ -13,7 +13,7 @@ export class CreateUserComponent implements OnInit {
   ngOnInit() {
   }
 
-  isAddUserDisabled() {
+  isResetUserDisabled() {
     if (this.username === '') {
       return true;
     }
@@ -21,7 +21,7 @@ export class CreateUserComponent implements OnInit {
     return false;
   }
 
-  onAddUser() {
+  onResetUser() {
     this.username = '';
   }
 }

@@ -17,6 +17,7 @@ import { RecipeDetailComponent } from './recipe-book/recipe-detail/recipe-detail
 import { HeaderComponent } from './header/header.component';
 import { RecipesComponent } from './recipe-book/recipes/recipes.component';
 import { DropdownDirective } from './dropdown.directive';
+import { AppRoutingModule } from './app-routing.module';
 
 @NgModule({
   declarations: [
@@ -39,6 +40,7 @@ import { DropdownDirective } from './dropdown.directive';
   imports: [
     BrowserModule,
     FormsModule,
+    AppRoutingModule,
   ],
   providers: [],
   bootstrap: [AppComponent]

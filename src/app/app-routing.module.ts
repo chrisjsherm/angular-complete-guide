@@ -4,6 +4,7 @@ import { RecipesComponent } from './recipe-book/recipes/recipes.component';
 import { ShoppingListComponent } from './shopping-list/shopping-list/shopping-list.component';
 import { RecipeStartComponent } from './recipes/recipe-start/recipe-start.component';
 import { RecipeDetailComponent } from './recipe-book/recipe-detail/recipe-detail.component';
+import { RecipeEditComponent } from './recipes/recipe-edit/recipe-edit.component';
 const appRoutes: Routes = [
   {
     path: '', redirectTo: '/recipes', pathMatch: 'full',
@@ -14,8 +15,16 @@ const appRoutes: Routes = [
       {
         path: '', component: RecipeStartComponent,
       },
+      // Put 'new' before the dynamic ':id' path so angular doesn't think 'new'
+      // is an id.
+      {
+        path: 'new', component: RecipeEditComponent,
+      },
       {
         path: ':id', component: RecipeDetailComponent,
+      },
+      {
+        path: ':id/edit', component: RecipeEditComponent,
       },
     ]
   },

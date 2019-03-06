@@ -24,7 +24,7 @@
             </span>
           </button>
           <button class="btn btn-danger" type="button"
-          (click)="onDelete()">Delete</button>
+          (click)="onDelete()" *ngIf="editMode">Delete</button>
           <button class="btn btn-primary" type="button"
           (click)="onClear()">Clear</button>
         </div>

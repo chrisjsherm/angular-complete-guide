@@ -30,6 +30,11 @@ export class RecipeBookService {
 
   constructor() { }
 
+  setRecipes(recipes: Recipe[]) {
+    this.recipes = recipes;
+    this.recipesChangedEvent.next(this.recipes.slice());
+  }
+
   getRecipes() {
     // Return a copy of the array from this service.
     return this.recipes.slice();

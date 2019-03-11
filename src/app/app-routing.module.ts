@@ -7,6 +7,7 @@ import { RecipeDetailComponent } from './recipe-book/recipe-detail/recipe-detail
 import { RecipeEditComponent } from './recipes/recipe-edit/recipe-edit.component';
 import { SignupComponent } from './auth/signup/signup.component';
 import { SigninComponent } from './auth/signin/signin.component';
+import { AuthGuardGuard } from './auth-guard.guard';
 const appRoutes: Routes = [
   {
     path: '', redirectTo: '/recipes', pathMatch: 'full',
@@ -21,12 +22,14 @@ const appRoutes: Routes = [
       // is an id.
       {
         path: 'new', component: RecipeEditComponent,
+        canActivate: [AuthGuardGuard],
       },
       {
         path: ':id', component: RecipeDetailComponent,
       },
       {
         path: ':id/edit', component: RecipeEditComponent,
+        canActivate: [AuthGuardGuard],
       },
     ]
   },

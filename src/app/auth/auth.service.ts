@@ -1,12 +1,15 @@
 import { Injectable } from '@angular/core';
 import * as firebase from 'firebase';
+import { Router } from '@angular/router';
 @Injectable({
   providedIn: 'root'
 })
 export class AuthService {
   token: string;
 
-  constructor() { }
+  constructor(
+    private router: Router,
+  ) { }
 
   signupUser(
     email: string,
@@ -33,6 +36,8 @@ export class AuthService {
             this.token = token;
           }
         );
+
+        this.router.navigate(['/']);
       }
     ).catch(
       error => console.log(error)

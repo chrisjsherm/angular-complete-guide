@@ -11,20 +11,21 @@ export class RecipeBookService {
 
   private recipes: Recipe[] = [
     new Recipe(
-      'A test recipe',
-      'this is simply a test',
+      'Shrimp Platter',
+      'So tasty!',
       'https://upload.wikimedia.org/wikipedia/commons/3/39/Recipe.jpg',
       [
-        new Ingredient('Meat', 1),
-        new Ingredient('French Fries', 20),
+        new Ingredient('Shrimp', 8),
+        new Ingredient('Green pepper', 1),
       ]),
     new Recipe(
-      'Another test recipe',
-      'this is simply a test',
-      'https://upload.wikimedia.org/wikipedia/commons/3/39/Recipe.jpg',
+      'Schnitzel',
+      'What else is there to say?',
+      'https://upload.wikimedia.org/wikipedia/commons/7/72/Schnitzel.JPG',
       [
-        new Ingredient('Buns', 2),
+        new Ingredient('French fries', 20),
         new Ingredient('Meat', 1),
+        new Ingredient('Lemon slice', 2),
       ])
   ];
 

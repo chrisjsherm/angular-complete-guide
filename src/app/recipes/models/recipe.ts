@@ -1,4 +1,4 @@
-import { Ingredient } from 'src/app/shared/models/ingredient';
+import { Ingredient } from '../../shared/models/ingredient';
 
 export class Recipe {
   constructor(

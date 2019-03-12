@@ -4,7 +4,7 @@ import { RecipeBookService } from '../recipes/recipe-book.service';
 import { Recipe } from '../recipes/models/recipe';
 import { map } from 'rxjs/operators';
 import { AuthService } from '../auth/auth.service';
-import { HttpClient } from '@angular/common/http';
+import { HttpClient, HttpParams } from '@angular/common/http';
 
 @Injectable({
   providedIn: 'root'
@@ -22,8 +22,10 @@ export class DataStorageService {
     const token = this.authService.getToken();
 
     return this.http.put(
-      this.DATABASE_URL + '?auth=' + token,
-      this.recipeService.getRecipes()
+      this.DATABASE_URL,
+      this.recipeService.getRecipes(), {
+        params: new HttpParams().set('auth', token),
+      }
     );
   }
 
@@ -31,7 +33,10 @@ export class DataStorageService {
     const token = this.authService.getToken();
 
     return this.http.get<Recipe[]>(
-      this.DATABASE_URL + '?auth=' + token
+      this.DATABASE_URL,
+      {
+        params: new HttpParams().set('auth', token),
+      }
     ).pipe(
       map(
         (recipes) => {

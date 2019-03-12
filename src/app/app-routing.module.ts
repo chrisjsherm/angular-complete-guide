@@ -1,37 +1,11 @@
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
-import { RecipesComponent } from './recipes/recipes/recipes.component';
 import { ShoppingListComponent } from './shopping-list/shopping-list/shopping-list.component';
-import { RecipeStartComponent } from './recipes/recipe-start/recipe-start.component';
-import { RecipeDetailComponent } from './recipes/recipe-detail/recipe-detail.component';
-import { RecipeEditComponent } from './recipes/recipe-edit/recipe-edit.component';
 import { SignupComponent } from './auth/signup/signup.component';
 import { SigninComponent } from './auth/signin/signin.component';
-import { AuthGuardGuard } from './auth-guard.guard';
 const appRoutes: Routes = [
   {
     path: '', redirectTo: '/recipes', pathMatch: 'full',
-  },
-  {
-    path: 'recipes', component: RecipesComponent,
-    children: [
-      {
-        path: '', component: RecipeStartComponent,
-      },
-      // Put 'new' before the dynamic ':id' path so angular doesn't think 'new'
-      // is an id.
-      {
-        path: 'new', component: RecipeEditComponent,
-        canActivate: [AuthGuardGuard],
-      },
-      {
-        path: ':id', component: RecipeDetailComponent,
-      },
-      {
-        path: ':id/edit', component: RecipeEditComponent,
-        canActivate: [AuthGuardGuard],
-      },
-    ]
   },
   {
     path: 'shopping-list', component: ShoppingListComponent,

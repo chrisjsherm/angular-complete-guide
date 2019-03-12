@@ -12,7 +12,7 @@ export class HeaderComponent implements OnInit {
 
   constructor(
     private dataStorageService: DataStorageService,
-    public authService: AuthService,
+    private authService: AuthService,
   ) { }
 
   ngOnInit() {
@@ -29,6 +29,10 @@ export class HeaderComponent implements OnInit {
 
   onFetchData() {
     return this.dataStorageService.getRecipes();
+  }
+
+  isAuthenticated() {
+    return this.authService.isAuthenticated();
   }
 
   onLogout() {

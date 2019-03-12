@@ -17,7 +17,7 @@
       </ul>
 
       <ul class="nav navbar-nav navbar-right">
-        <ng-template [ngIf]="!authService.isAuthenticated()">
+        <ng-template *ngIf="!isAuthenticated()">
           <li routerLinkActive="active">
             <a routerLink="/signup">
               Register
@@ -30,7 +30,7 @@
           </li>
         </ng-template>
 
-        <ng-template [ngIf]="authService.isAuthenticated()">
+        <ng-template *ngIf="isAuthenticated()">
           <li class="dropdown" appDropdown>
 
             <a style="cursor: pointer;">Manage <span

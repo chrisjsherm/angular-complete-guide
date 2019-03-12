@@ -23,9 +23,7 @@ export class DataStorageService {
 
     return this.http.put(
       this.DATABASE_URL,
-      this.recipeService.getRecipes(), {
-        params: new HttpParams().set('auth', token),
-      }
+      this.recipeService.getRecipes()
     );
   }
 
@@ -33,10 +31,7 @@ export class DataStorageService {
     const token = this.authService.getToken();
 
     return this.http.get<Recipe[]>(
-      this.DATABASE_URL,
-      {
-        params: new HttpParams().set('auth', token),
-      }
+      this.DATABASE_URL
     ).pipe(
       map(
         (recipes) => {
